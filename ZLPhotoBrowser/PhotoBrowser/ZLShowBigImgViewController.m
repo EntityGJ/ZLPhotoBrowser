@@ -224,6 +224,7 @@
     
     _navView = [[UIView alloc] init];
     _navView.backgroundColor = [configuration.navBarColor colorWithAlphaComponent:.9];
+    _navView.hidden = configuration.hiddNavView;
     [self.view addSubview:_navView];
     
     _btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -710,6 +711,15 @@
 
 - (void)handlerSingleTap
 {
+    ZLPhotoConfiguration *configuration = [(ZLImageNavigationController *)self.navigationController configuration];
+
+    if (configuration.singleTapTo) {
+        [self dismissViewControllerAnimated:true completion:^{
+            
+        }];
+        return;
+    }
+    
     _hideNavBar = !_hideNavBar;
     
     _navView.hidden = _hideNavBar;

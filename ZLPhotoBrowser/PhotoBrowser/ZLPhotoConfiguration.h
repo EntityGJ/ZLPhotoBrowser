@@ -294,4 +294,14 @@
  */
 @property (nonatomic, assign) ZLExportVideoType exportVideoType;
 
+/**
+ 是否隐藏自定义的 导航栏 默认false
+ */
+@property (assign, nonatomic) BOOL hiddNavView;
+
+/**
+ 轻击 返回之前页面 默认 false
+ */
+@property (assign, nonatomic) BOOL singleTapTo;
+
 @end
